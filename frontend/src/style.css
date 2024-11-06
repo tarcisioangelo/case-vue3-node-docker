@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('/fonts/Quicksand-VariableFont_wght.ttf');
+}
+
+:root {
+    font-family: 'Quicksand';
+    background-color: #181a1e;
+    color: #f9f9f9;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    overflow-x: hidden;
+    min-height: 100dvh;
+}
+
+.link {
+    @apply text-blue-500 font-bold   cursor-pointer;
+}
+
+.container-content {
+    @apply px-4 md:px-10 py-4;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+    a:hover {
+        color: #747bff;
+    }
+    button {
+        background-color: #f9f9f9;
+    }
+}
