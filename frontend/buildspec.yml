@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo install dependencies
+      - npm i npm@latest -g
+      - aws s3 rm --recursive "s3://bucketname" 
+  pre_build:
+    commands:
+      - echo Pre build
+      - npm install
+  build:
+    commands:
+      - echo Build 
+      - npm run build
+  post_build:
+    commands:
+      - echo Send objects to S3 Bucket
+      - aws s3 sync ./dist s3://bucketname
