@@ -68,12 +68,10 @@ const handleAuth = async (data: IAuthUser) => {
 <template>
     <div class="w-full">
         <form @submit.prevent="handleLogin" autocomplete="off">
-            <p class="text-[36px] mb-8">Login:</p>
+            <p class="text-[36px] mt-3 md:mt-0 mb-3 md:mb-8">Login</p>
 
-            <p class="text-lg text-center">Faça login e mantenha suas tarefas atualizadas!</p>
-            <p class="text-center text-sm">
-                Não possui conta? <router-link class="link" to="/register">Cadastre-se</router-link>
-            </p>
+            <p class="text-lg text-center leading-none mt-8 mb-4">Faça login e mantenha suas tarefas atualizadas!</p>
+
             <FormContainer>
                 <div class="col-span-12">
                     <DefaultInputText
@@ -99,9 +97,13 @@ const handleAuth = async (data: IAuthUser) => {
                     />
                 </div>
             </FormContainer>
+
             <div class="w-full m-auto text-center pt-4">
                 <DefaultButton text="Entrar na Usertasks" />
             </div>
+            <p class="text-center text-sm mt-[4rem] mb-6">
+                Não possui conta? <router-link class="link" to="/register">Cadastre-se</router-link>
+            </p>
         </form>
     </div>
 </template>

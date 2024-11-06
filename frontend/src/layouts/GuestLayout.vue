@@ -20,9 +20,9 @@
     @apply flex flex-col  md:flex-row h-[100vh]  bg-component;
 }
 .first-child {
-    @apply flex md:flex-col  w-full md:w-1/2 h-full bg-primary justify-around items-center rounded-r-[40px] text-white p-5;
+    @apply flex md:flex-col  w-full md:w-1/2 min-h-[25%] md:max-h-full md:h-full bg-primary justify-around items-center md:rounded-r-[40px] text-white p-5;
 }
 .second-child {
-    @apply w-full md:w-1/2 h-full bg-component rounded-tr-[15px] rounded-br-[15px] px-5 pt-14;
+    @apply w-full md:w-1/2 h-full bg-component md:rounded-tr-[15px] md:rounded-br-[15px] px-3 md:px-5 md:pt-14;
 }
 </style>

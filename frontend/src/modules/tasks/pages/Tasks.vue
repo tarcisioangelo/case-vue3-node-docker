@@ -33,6 +33,8 @@ const isLoading = ref<boolean>(false)
 
 const isDisabled = computed(() => newTask.description.length === 0)
 
+const formRef = ref<{ input: HTMLInputElement } | null>(null)
+
 const getAll = async () => {
     try {
         isLoading.value = true
@@ -59,6 +61,9 @@ const toStartTask = computed(() => {
 })
 
 const handleEdit = (data: ITaskList) => {
+    formRef.value?.input.focus()
+    formRef.value?.input.scrollIntoView({ behavior: 'smooth', block: 'center' })
+
     newTask.id = data.id
     newTask.description = data.description
     newTask.date = data.date
@@ -134,6 +139,7 @@ const descriptionPage = computed(() => {
             >
                 <div class="w-full md:flex-1">
                     <DefaultInputText
+                        ref="formRef"
                         v-model="newTask.description"
                         custom-class="!mb-0"
                         id="newTask"
