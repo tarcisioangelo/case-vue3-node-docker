@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "outDir": "dist",
+        "module": "commonjs",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "strictPropertyInitialization": false,
+        "skipLibCheck": true,
+        "useUnknownInCatchVariables": false,
+        "types": ["jest", "reflect-metadata"],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    },
+    "exclude": ["node_modules/"],
+    "include": ["src/**/*.ts", "test/**/*.ts"]
+}

@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    database:
+        image: postgres
+        container_name: database
+        environment:
+            - 'POSTGRES_USER=postgres'
+            - 'POSTGRES_PASSWORD=123456'
+            - 'POSTGRES_DB=hide'
+            - 'POSTGRES_SCHEMA=hide'
+            - 'LC_COLLATE=sv_SE.UTF-8'
+            - 'LC_CTYPE=sv_SE.UTF-8'
+        ports:
+            - '5432:5432'
+        volumes:
+            - pg_data:/var/lib/postgresql/data
+            - pg_data:/var/lib/postgresql/locale.conf:/etc/locale.conf
+
+volumes:
+    pg_data:
